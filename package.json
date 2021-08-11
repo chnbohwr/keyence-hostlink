@@ -1,0 +1,22 @@
+{
+  "name": "keyence-hostlink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chnbohwr/keyence-hostlink.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chnbohwr/keyence-hostlink/issues"
+  },
+  "homepage": "https://github.com/chnbohwr/keyence-hostlink#readme",
+  "devDependencies": {
+    "@types/node": "^16.4.13"
+  }
+}
