@@ -23,6 +23,17 @@ link.connect(() => {
 });
 ```
 
+then the console will show 
+
+```
+false {
+  message: <Buffer 52 44 20 44 4d 30 0d 0a>,
+  address: 'DM0',
+  result: '00011\r\n',
+  resultBuffer: <Buffer 30 30 30 31 31 0d 0a>
+}
+```
+
 ### API
 
 #### constructor(options)
