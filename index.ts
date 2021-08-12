@@ -18,12 +18,16 @@ type QueueArr = {
 }[]
 
 export class Hostlink {
-  connection: Net.Socket;
+  connection: Net.Socket | undefined;
   queue: QueueArr = [];
   processRunning: boolean = false;
   connectStatus: boolean = false;
+  options: Net.NetConnectOpts;
   constructor(options: Net.NetConnectOpts) {
-    const connection = Net.createConnection(options);
+    this.options = options;
+  }
+  connect(callback: () => void | undefined) {
+    const connection = Net.createConnection(this.options, callback);
     this.connection = connection;
     connection.on('data', this.onData.bind(this));
     connection.on('error', this.onError.bind(this));
@@ -56,7 +60,7 @@ export class Hostlink {
     this.connectStatus = true;
   }
   private run() {
-    if (this.processRunning) { return; }
+    if (this.processRunning || !this.connection) { return; }
     this.processRunning = true;
     const queueArr = this.queue.filter((data) => (!data.running));
     if (queueArr.length === 0) { this.processRunning = false; return; }
