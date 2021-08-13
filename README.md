@@ -60,4 +60,10 @@ callback responseData will be follow structure
   error?: any, // error detail information
 }
 ```
+#### writeItem(address, value, callback)
+write value into address, and callbake will trigger when write done.
+- address: string for example 'DM0'
+- value:string for example '100',
+- callback (err?: Error | undefined) => void
 
+if callback first parameter is undefined, it means success.

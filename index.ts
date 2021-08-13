@@ -77,4 +77,9 @@ export class Hostlink {
     this.queue.push(queueData);
     this.run();
   }
+  writeItem(address: string, value:string, cb?: ((err?: Error | undefined) => void) | undefined) {
+    if (this.processRunning || !this.connection) { return; }
+    const message = Buffer.from(`WR ${address.trim()} ${value.trim()}\r\n`);
+    this.connection.write(message,cb);
+  }
 }
