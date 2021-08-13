@@ -1,6 +1,6 @@
 {
   "name": "keyence-hostlink",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "nodejs lib communication with keyence PLC",
   "main": "dist/index.js",
   "scripts": {
